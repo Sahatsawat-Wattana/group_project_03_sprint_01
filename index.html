@@ -7,6 +7,22 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+        @keyframes scroll {
+          /* เริ่มต้นที่ตำแหน่งปกติ */
+          from { transform: translateX(0); }
+          /* เลื่อนไปทางซ้าย 50% (เพราะเรามีของ 2 ชุดที่เหมือนกัน ชุดที่สองจะมาแทนที่ชุดแรกพอดี) */
+          to { transform: translateX(-50%); }
+        }
+
+        .animate-scroll {
+          /* สั่งให้ใช้ animation ชื่อ scroll / ระยะเวลา 20 วินาที / ความเร็วสม่ำเสมอ / วนลูปไม่สิ้นสุด */
+          animation: scroll 20s linear infinite;
+        }
+
+        /* เทคนิคพิเศษ: เมื่อเอาเมาส์มาวาง (Hover) ให้หยุดเลื่อน เพื่อให้คนอ่านเนื้อหาได้ */
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
     </style>
   </head>
   <body>
@@ -24,12 +40,55 @@
             <!--Ploy-->
 
         </section>
+<!-- ================================================================================= -->
+ 
+        <!--Chong-->
+        <!-- <section class="m-0 box-border h-[500px] bg-white flex flex-col gap-[0.5rem]" classname="today-deal">
 
-        <section class="h-[500px] bg-white" classname="today-deal">
-            <!--Chong-->
+            <div id="#" class="banner flex flex-row"></div> 
 
-        </section>
+              <img id="#" class="w-[50%] h-auto "></img> 
 
+            <div id="#" class="pointer flex flex-row"></div> 
+
+              <div id="#" class=""></div> 
+
+        </section> -->
+        <div class="relative w-full overflow-hidden bg-gray-100 py-10">
+          
+          <div class="flex w-[max-content] animate-scroll">
+            
+            <div class="flex gap-6 px-3">
+              
+              <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 border-red-500">
+                <img src="https://s3.ap-southeast-1.amazonaws.com/media.fictionlog/statics/69c23014hjxusfIc.jpeg" class="w-full h-auto object-cover">
+              </div>
+
+              <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 border-blue-500">
+                <img src="https://via.placeholder.com/1200x400/3b82f6/ffffff?text=NEXT+BOOK" class="w-full h-auto object-cover">
+              </div>
+
+              <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 border-yellow-500">
+                <img src="https://via.placeholder.com/1200x400/eab308/ffffff?text=NEW+RELEASE" class="w-full h-auto object-cover">
+              </div>
+            </div>
+
+            <div class="flex gap-6 px-3" aria-hidden="true"> 
+              <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 border-red-500">
+                <img src="https://via.placeholder.com/1200x400/22c55e/ffffff?text=RICH+AF+BANNER" class="w-full h-auto object-cover">
+              </div>
+              <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 border-blue-500">
+                <img src="https://via.placeholder.com/1200x400/3b82f6/ffffff?text=NEXT+BOOK" class="w-full h-auto object-cover">
+              </div>
+              <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 border-yellow-500">
+                <img src="https://via.placeholder.com/1200x400/eab308/ffffff?text=NEW+RELEASE" class="w-full h-auto object-cover">
+              </div>
+            </div>
+
+  </div>
+</div>
+
+<!-- ================================================================================= -->
         <section class="h-[500px] bg-[#ECE0DC]" classname="category">
             <!--Jay & Em-->
 
