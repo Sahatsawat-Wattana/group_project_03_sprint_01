@@ -7,19 +7,27 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+         /* สร้าง animation ชื่อ scroll */
         @keyframes scroll {
-          /* เริ่มต้นที่ตำแหน่งปกติ */
+          /* จุดเริ่มต้นของ animation (ตำแหน่งปกติ) */
           from { transform: translateX(0); }
-          /* เลื่อนไปทางซ้าย 50% (เพราะเรามีของ 2 ชุดที่เหมือนกัน ชุดที่สองจะมาแทนที่ชุดแรกพอดี) */
+
+          /* เลื่อนไปทางซ้าย 50% ของความกว้าง element */
+          /* เพราะมี content ซ้ำ 2 ชุด ทำให้ดูเหมือนเลื่อนไม่สิ้นสุด */
           to { transform: translateX(-50%); }
         }
 
         .animate-scroll {
-          /* สั่งให้ใช้ animation ชื่อ scroll / ระยะเวลา 20 วินาที / ความเร็วสม่ำเสมอ / วนลูปไม่สิ้นสุด */
+          /*
+          ใช้ animation ชื่อ scroll
+          20s = ใช้เวลา 20 วินาที
+          linear = ความเร็วคงที่
+          infinite = วนซ้ำไม่จบ
+          */
           animation: scroll 20s linear infinite;
         }
 
-        /* เทคนิคพิเศษ: เมื่อเอาเมาส์มาวาง (Hover) ให้หยุดเลื่อน เพื่อให้คนอ่านเนื้อหาได้ */
+        /* เมื่อเอาเมาส์ hover ให้ animation หยุด */
         .animate-scroll:hover {
           animation-play-state: paused;
         }
@@ -54,40 +62,84 @@
               <div id="#" class=""></div> 
 
         </section> -->
+
+        <!-- -------------------------------------------------------------------------- -->
+         
+        <section class="today-deal m-0 box-border h-[500px] bg-white flex flex-col gap-[0.5rem]">
+        <!-- container หลักของ carousel -->
+        <!-- relative = ใช้เป็น reference สำหรับ element ลูกที่เป็น absolute -->
+        <!-- w-full = กว้างเต็ม -->
+        <!-- overflow-hidden = ซ่อนส่วนที่เลื่อนออกนอกกรอบ -->
+        <!-- bg-gray-100 = พื้นหลังสีเทา -->
+        <!-- py-10 = padding บนล่าง 2.5rem -->
         <div class="relative w-full overflow-hidden bg-gray-100 py-10">
           
+          <!-- flex = layout แนวนอน -->
+          <!-- w-[max-content] = ความกว้างเท่ากับ content จริง -->
+          <!-- animate-scroll = class ที่สร้าง animation เลื่อน -->
           <div class="flex w-[max-content] animate-scroll">
             
+            <!-- กลุ่ม banner ชุดที่ 1 -->
+            <!-- flex = เรียงแนวนอน -->
+            <!-- gap-6 = ช่องว่างระหว่าง item -->
+            <!-- px-3 = padding ซ้ายขวา -->
             <div class="flex gap-6 px-3">
               
+              <!-- card banner -->
+              <!-- w-[600px] = กว้าง 600px -->
+              <!-- shrink-0 = ห้าม flex บีบให้เล็กลง -->
+              <!-- bg-white = พื้นหลังสีขาว -->
+              <!-- rounded-3xl = มุมโค้ง -->
+              <!-- shadow-xl = เงาขนาดใหญ่ -->
+              <!-- overflow-hidden = ซ่อนส่วนเกิน -->
+              <!-- border-t-8 = border ด้านบนหนา -->
+              <!-- border-red-500 = สี border -->
               <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 border-red-500">
+
+                <!-- รูปภาพ -->
+                <!-- w-full = กว้างเต็ม container -->
+                <!-- h-auto = ความสูงตามสัดส่วน -->
+                <!-- object-cover = crop รูปให้เต็มพื้นที่ -->
                 <img src="https://s3.ap-southeast-1.amazonaws.com/media.fictionlog/statics/69c23014hjxusfIc.jpeg" class="w-full h-auto object-cover">
               </div>
 
+              <!-- banner card -->
               <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 border-blue-500">
                 <img src="https://via.placeholder.com/1200x400/3b82f6/ffffff?text=NEXT+BOOK" class="w-full h-auto object-cover">
               </div>
 
+              <!-- banner card -->
               <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 border-yellow-500">
                 <img src="https://via.placeholder.com/1200x400/eab308/ffffff?text=NEW+RELEASE" class="w-full h-auto object-cover">
               </div>
+
             </div>
 
+            <!-- กลุ่ม banner ชุดที่ 2 -->
+            <!-- ทำซ้ำเพื่อให้ scroll loop แบบ seamless -->
+            <!-- aria-hidden="true" = บอก screen reader ว่าไม่ต้องอ่าน -->
             <div class="flex gap-6 px-3" aria-hidden="true"> 
+
               <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 border-red-500">
                 <img src="https://via.placeholder.com/1200x400/22c55e/ffffff?text=RICH+AF+BANNER" class="w-full h-auto object-cover">
               </div>
+
               <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 border-blue-500">
                 <img src="https://via.placeholder.com/1200x400/3b82f6/ffffff?text=NEXT+BOOK" class="w-full h-auto object-cover">
               </div>
+
               <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 border-yellow-500">
                 <img src="https://via.placeholder.com/1200x400/eab308/ffffff?text=NEW+RELEASE" class="w-full h-auto object-cover">
               </div>
+
             </div>
+
+          </div>
+        </div>
 
   </div>
 </div>
-
+</section>
 <!-- ================================================================================= -->
         <section class="h-[500px] bg-[#ECE0DC]" classname="category">
             <!--Jay & Em-->
