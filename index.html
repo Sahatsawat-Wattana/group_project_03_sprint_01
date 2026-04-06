@@ -6,44 +6,50 @@
     <title>Readly</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        .rating-star {
+      .rating-star {
         display: flex;
         align-items: center;
         gap: 4px;
         margin-top: 4px;
         width: 16px;
-        height: 16px;}
+        height: 16px;
+      }
 
-        .no-scrollbar::-webkit-scrollbar {
-        display: none;} 
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
     </style>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
-        @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libre+Caslon+Display&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
-         /* สร้าง animation ชื่อ scroll */
-        @keyframes scroll {
-          /* จุดเริ่มต้นของ animation (ตำแหน่งปกติ) */
-          from { transform: translateX(0); }
-
-          /* เลื่อนไปทางซ้าย 50% ของความกว้าง element */
-          /* เพราะมี content ซ้ำ 2 ชุด ทำให้ดูเหมือนเลื่อนไม่สิ้นสุด */
-          to { transform: translateX(-50%); }
+      @import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libre+Caslon+Display&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
+      /* สร้าง animation ชื่อ scroll */
+      @keyframes scroll {
+        /* จุดเริ่มต้นของ animation (ตำแหน่งปกติ) */
+        from {
+          transform: translateX(0);
         }
 
-        .animate-scroll {
-          /*
+        /* เลื่อนไปทางซ้าย 50% ของความกว้าง element */
+        /* เพราะมี content ซ้ำ 2 ชุด ทำให้ดูเหมือนเลื่อนไม่สิ้นสุด */
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .animate-scroll {
+        /*
           ใช้ animation ชื่อ scroll
           20s = ใช้เวลา 20 วินาที
           linear = ความเร็วคงที่
           infinite = วนซ้ำไม่จบ
           */
-          animation: scroll 20s linear infinite;
-        }
+        animation: scroll 20s linear infinite;
+      }
 
-        /* เมื่อเอาเมาส์ hover ให้ animation หยุด */
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
+      /* เมื่อเอาเมาส์ hover ให้ animation หยุด */
+      .animate-scroll:hover {
+        animation-play-state: paused;
+      }
     </style>
   </head>
   <body>
@@ -162,143 +168,169 @@
     </header>
     <hr class="border-[#68483d] border-1" />
     <main>
-      <section class="h-[500px] pl-[100px] py-[40px] bg-[#ECE0DC] font-['Cormorant_Garamond']  flex flex-row " classname="hero-banner">
-            <div class="w-[240px] mr-[48px] [text-wrap:pretty]">
-                  <h1 class="font-extrabold text-6xl">Trending <br> Books</h1>
-                  <p class="mt-2 text-2xl font-semibold">Let's discover your new favorite books !</p>
+      <section
+        class="h-[500px] pl-[100px] py-[40px] bg-[#ECE0DC] font-['Cormorant_Garamond'] flex flex-row"
+        classname="hero-banner"
+      >
+        <div class="w-[240px] mr-[48px] [text-wrap:pretty]">
+          <h1 class="font-extrabold text-6xl">
+            Trending <br />
+            Books
+          </h1>
+          <p class="mt-2 text-2xl font-semibold">
+            Let's discover your new favorite books !
+          </p>
+        </div>
+
+        <div
+          class="relative w-full max-w-full justify-center pl-[48px] pr-[32px] pb-[32px] pt-[48px] bg-[#faf4ef] rounded-[90px] overflow-x-auto scroll-smooth no-scrollbar"
+        >
+          <button
+            class="absolute left-10 top-1/2 -translate-y-1/2 z-10 text-7xl font-extrabold transform scale-y-200 text-[#878584] hover:text-black transition"
+          >
+            &lt;
+          </button>
+
+          <button
+            class="absolute right-10 top-1/2 -translate-y-1/2 z-10 text-7xl font-extrabold transform scale-y-200 text-[#878584] hover:text-black transition"
+          >
+            &gt;
+          </button>
+
+          <div class="flex flex-row gap-[72px] justify-center">
+            <!--Section hero's book-->
+            <div class="w-[160px] h-[240px] m-[8px]">
+              <img
+                class="object-cover object-center w-full h-full max-w-full transition duration-300 hover:-translate-y-4 hover:shadow-4xl shadow-[0_10px_20px_rgba(0,0,0,0.5)] hover:scale-108"
+                src="./hero-section-image/hero-book-01.jpg"
+                alt="Project Hail Mary"
+              />
+              <div class="my-[16px] h-[100px] w-[300px]">
+                <a
+                  href="https://www.amazon.com/Project-Hail-Mary-Andy-Weir/dp/0593135229/ref=tmm_pap_swatch_0"
+                  class="font-extrabold text-2xl py-[8px] hover:underline"
+                  >Project Hail Mary</a
+                >
+                <div class="flex flex-row gap-2 items-center">
+                  <p class="text-xl">4.7</p>
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/half-star.png"
+                    alt="half-star"
+                  />
+                </div>
+                <p class="font-bold text-2xl">434.15 THB</p>
+              </div>
             </div>
 
-            <div class="relative w-full max-w-full justify-center pl-[48px] pr-[32px] pb-[32px] pt-[48px] bg-[#faf4ef] rounded-[90px]
-                    overflow-x-auto scroll-smooth no-scrollbar">
+            <div class="w-[160px] h-[240px] m-[8px]">
+              <img
+                class="object-cover object-center w-full h-full max-w-full transition duration-300 hover:-translate-y-4 hover:shadow-4xl shadow-[0_10px_20px_rgba(0,0,0,0.5)] hover:scale-108"
+                src="./hero-section-image/hero-book-02.jpg"
+                alt="The Nightingale"
+              />
+              <div class="my-[16px] h-[100px] w-[300px]">
+                <a
+                  href="https://www.amazon.com/Nightingale-Novel-Kristin-Hannah/dp/1250080401/ref=lp_17143709011_1_11?pf_rd_p=53d84f87-8073-4df1-9740-1bf3fa798149&pf_rd_r=30CKXBBT73395563YT23&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D"
+                  class="font-extrabold text-2xl hover:underline"
+                  >The Nightingale</a
+                >
+                <div class="flex flex-row gap-2 items-center">
+                  <p class="text-xl">4.8</p>
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/half-star.png"
+                    alt="half-star"
+                  />
+                </div>
+                <p class="font-bold text-2xl">391.98 THB</p>
+              </div>
+            </div>
 
-                  <button 
-                        class="absolute left-10 top-1/2 -translate-y-1/2 z-10 
-                        text-7xl font-extrabold transform scale-y-200 text-[#878584] hover:text-black transition">
-                        &lt;
-                  </button>
-
-                  <button 
-                        class="absolute right-10 top-1/2 -translate-y-1/2 z-10 
-                        text-7xl font-extrabold transform scale-y-200 text-[#878584] hover:text-black transition">
-                        &gt;
-                  </button>
-
-                  <div class="flex flex-row gap-[72px] justify-center">
-                            
-                            <!--Section hero's book-->
-                            <div class="w-[160px] h-[240px] m-[8px]">
-                                    <img
-                                          class="object-cover object-center w-full h-full max-w-full 
-                                          transition duration-300 hover:-translate-y-4 hover:shadow-4xl shadow-[0_10px_20px_rgba(0,0,0,0.5)]  hover:scale-108"
-                                          src="./hero-section-image/hero-book-01.jpg"
-                                          alt="Project Hail Mary"/>
-                                    <div class="my-[16px] h-[100px] w-[300px]">
-                                          <a href="https://www.amazon.com/Project-Hail-Mary-Andy-Weir/dp/0593135229/ref=tmm_pap_swatch_0" 
-                                            class="font-extrabold text-2xl py-[8px] hover:underline"
-                                            >Project Hail Mary</a>
-                                          <div class="flex flex-row gap-2 items-center">
-                                                  <p class="text-xl">4.7</p>
-                                                  <img
-                                                    class="rating-star"
-                                                    src="./hero-section-image/star.png"
-                                                    alt="star"/>
-                                                  <img
-                                                    class="rating-star"
-                                                    src="./hero-section-image/star.png"
-                                                    alt="star"/>
-                                                  <img
-                                                    class="rating-star"
-                                                    src="./hero-section-image/star.png"
-                                                    alt="star"/>
-                                                  <img
-                                                    class="rating-star"
-                                                    src="./hero-section-image/star.png"
-                                                    alt="star"/>
-                                                  <img
-                                                    class="rating-star"
-                                                    src="./hero-section-image/half-star.png"
-                                                    alt="half-star"/>
-                                          </div>
-                                          <p class="font-bold text-2xl">434.15 THB</p>
-                                      
-                                    </div>
-                            </div>
-
-                            <div class="w-[160px] h-[240px] m-[8px]">
-                                    <img
-                                          class="object-cover object-center w-full h-full max-w-full 
-                                          transition duration-300 hover:-translate-y-4 hover:shadow-4xl shadow-[0_10px_20px_rgba(0,0,0,0.5)] hover:scale-108"
-                                          src="./hero-section-image/hero-book-02.jpg"
-                                          alt="The Nightingale"/>
-                                    <div class="my-[16px] h-[100px] w-[300px]">
-                                          <a href="https://www.amazon.com/Nightingale-Novel-Kristin-Hannah/dp/1250080401/ref=lp_17143709011_1_11?pf_rd_p=53d84f87-8073-4df1-9740-1bf3fa798149&pf_rd_r=30CKXBBT73395563YT23&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D" 
-                                            class="font-extrabold text-2xl hover:underline"
-                                            >The Nightingale</a>
-                                          <div class="flex flex-row gap-2 items-center">
-                                                <p class="text-xl">4.8</p>
-                                                <img
-                                                  class="rating-star"
-                                                  src="./hero-section-image/star.png"
-                                                  alt="star"/>
-                                                <img
-                                                  class="rating-star"
-                                                  src="./hero-section-image/star.png"
-                                                  alt="star"/>
-                                                <img
-                                                  class="rating-star"
-                                                  src="./hero-section-image/star.png"
-                                                  alt="star"/>
-                                                <img
-                                                  class="rating-star"
-                                                  src="./hero-section-image/star.png"
-                                                  alt="star"/>
-                                                <img
-                                                  class="rating-star"
-                                                  src="./hero-section-image/half-star.png"
-                                                  alt="half-star"/>
-                                          </div>
-                                          <p class="font-bold text-2xl">391.98 THB</p>
-                                    </div>
-                              
-                            </div>
-
-                            <div class="w-[160px] h-[240px] m-[8px]">
-                                    <img
-                                      class="object-cover object-center w-full h-full max-w-full 
-                                      transition duration-300 hover:-translate-y-4 hover:shadow-4xl shadow-[0_10px_20px_rgba(0,0,0,0.5)] hover:scale-108"
-                                      src="./hero-section-image/hero-book-03.jpg"
-                                      alt="The Housemaid"/>
-                                    <div class="my-[16px] h-[100px] w-[300px]">
-                                        <a href="https://www.amazon.com/Housemaid-Freida-McFadden/dp/1538742578/ref=lp_17143709011_1_5?pf_rd_p=53d84f87-8073-4df1-9740-1bf3fa798149&pf_rd_r=66VAW53NF657MHYVAFZG&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D" 
-                                          class="font-extrabold text-2xl hover:underline"
-                                          >The Housemaid</a>
-                                        <div class="flex flex-row gap-2 items-center">
-                                                <p class="text-xl">4.5</p>
-                                                <img
-                                                  class="rating-star"
-                                                  src="./hero-section-image/star.png"
-                                                  alt="star"/>
-                                                <img
-                                                  class="rating-star"
-                                                  src="./hero-section-image/star.png"
-                                                  alt="star"/>
-                                                <img
-                                                  class="rating-star"
-                                                  src="./hero-section-image/star.png"
-                                                  alt="star"/>
-                                                <img
-                                                  class="rating-star"
-                                                  src="./hero-section-image/star.png"
-                                                  alt="star"/>
-                                                <img
-                                                  class="rating-star"
-                                                  src="./hero-section-image/half-star.png"
-                                                  alt="half-star"/>
-                                        </div>
-                                        <p class="font-bold text-2xl">391.98 THB</p>                           
-                                    </div>
-                            </div>
-                            <!--hide book
+            <div class="w-[160px] h-[240px] m-[8px]">
+              <img
+                class="object-cover object-center w-full h-full max-w-full transition duration-300 hover:-translate-y-4 hover:shadow-4xl shadow-[0_10px_20px_rgba(0,0,0,0.5)] hover:scale-108"
+                src="./hero-section-image/hero-book-03.jpg"
+                alt="The Housemaid"
+              />
+              <div class="my-[16px] h-[100px] w-[300px]">
+                <a
+                  href="https://www.amazon.com/Housemaid-Freida-McFadden/dp/1538742578/ref=lp_17143709011_1_5?pf_rd_p=53d84f87-8073-4df1-9740-1bf3fa798149&pf_rd_r=66VAW53NF657MHYVAFZG&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D"
+                  class="font-extrabold text-2xl hover:underline"
+                  >The Housemaid</a
+                >
+                <div class="flex flex-row gap-2 items-center">
+                  <p class="text-xl">4.5</p>
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="rating-star"
+                    src="./hero-section-image/half-star.png"
+                    alt="half-star"
+                  />
+                </div>
+                <p class="font-bold text-2xl">391.98 THB</p>
+              </div>
+            </div>
+            <!--hide book
                             <div class="w-[160px] h-[240px] m-[8px]">
                                   <img
                                     "object-cover object-center w-full h-full max-w-full 
@@ -377,23 +409,27 @@
                               
                             </div>
                             -->
-                          <!--section hero's book--> 
-                  </div>
-            </div>
+            <!--section hero's book-->
+          </div>
+        </div>
 
-            <button class="transition hover:scale-102 px-[32px] pb-[400px] justify-center cursor-pointer">
-                <img
-                   class="w-10"
-                   src="./hero-section-image/filter.png"
-                   alt="filter"/>
-                
-            </button>
+        <button
+          class="transition hover:scale-102 px-[32px] pb-[400px] justify-center cursor-pointer"
+        >
+          <img
+            class="w-10"
+            src="./hero-section-image/filter.png"
+            alt="filter"
+          />
+        </button>
       </section>
-<!-- ================================================================================= -->
- 
-        <!--Chong-->
-         
-        <section class="today-deal m-0 box-border h-auto bg-white flex flex-col gap-[0.5rem]">
+      <!-- ================================================================================= -->
+
+      <!--Chong-->
+
+      <section
+        class="today-deal m-0 box-border h-auto bg-white flex flex-col gap-[0.5rem]"
+      >
         <!-- container หลักของ carousel -->
         <!-- relative = ใช้เป็น reference สำหรับ element ลูกที่เป็น absolute -->
         <!-- w-full = กว้างเต็ม -->
@@ -401,18 +437,15 @@
         <!-- bg-gray-100 = พื้นหลังสีเทา -->
         <!-- py-10 = padding บนล่าง 2.5rem -->
         <div class="relative w-full overflow-hidden bg-[#ECEAE9] py-10">
-          
           <!-- flex = layout แนวนอน -->
           <!-- w-[max-content] = ความกว้างเท่ากับ content จริง -->
           <!-- animate-scroll = class ที่สร้าง animation เลื่อน -->
           <div class="flex w-[max-content] animate-scroll">
-            
             <!-- กลุ่ม banner ชุดที่ 1 -->
             <!-- flex = เรียงแนวนอน -->
             <!-- gap-6 = ช่องว่างระหว่าง item -->
             <!-- px-3 = padding ซ้ายขวา -->
             <div class="flex gap-6 px-3">
-              
               <!-- card banner -->
               <!-- w-[600px] = กว้าง 600px -->
               <!-- shrink-0 = ห้าม flex บีบให้เล็กลง -->
@@ -421,53 +454,75 @@
               <!-- shadow-xl = เงาขนาดใหญ่ -->
               <!-- overflow-hidden = ซ่อนส่วนเกิน -->
               <!-- border-t-8 = border ด้านบนหนา -->
-              <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 ">
-
+              <div
+                class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8"
+              >
                 <!-- รูปภาพ -->
                 <!-- w-full = กว้างเต็ม container -->
                 <!-- h-auto = ความสูงตามสัดส่วน -->
                 <!-- object-cover = crop รูปให้เต็มพื้นที่ -->
-                <img src="today-deal-image/today-deal-banner-02.svg" class="w-full h-auto object-cover">
+                <img
+                  src="today-deal-image/today-deal-banner-02.svg"
+                  class="w-full h-auto object-cover"
+                />
               </div>
 
               <!-- banner card -->
-              <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8">
-                <img src="today-deal-image/today-deal-banner-03.svg" class="w-full h-auto object-cover">
+              <div
+                class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8"
+              >
+                <img
+                  src="today-deal-image/today-deal-banner-03.svg"
+                  class="w-full h-auto object-cover"
+                />
               </div>
 
               <!-- banner card -->
-              <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 ">
-                <img src="today-deal-image/today-deal-banner-04.svg" class="w-full h-auto object-cover">
+              <div
+                class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8"
+              >
+                <img
+                  src="today-deal-image/today-deal-banner-04.svg"
+                  class="w-full h-auto object-cover"
+                />
               </div>
-
             </div>
 
             <!-- กลุ่ม banner ชุดที่ 2 -->
             <!-- ทำซ้ำเพื่อให้ scroll loop แบบ seamless -->
             <!-- aria-hidden="true" = บอก screen reader ว่าไม่ต้องอ่าน -->
-            <div class="flex gap-6 px-3" aria-hidden="true"> 
-
-              <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 ">
-                <img src="today-deal-image/today-deal-banner-02.svg" class="w-full h-auto object-cover">
+            <div class="flex gap-6 px-3" aria-hidden="true">
+              <div
+                class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8"
+              >
+                <img
+                  src="today-deal-image/today-deal-banner-02.svg"
+                  class="w-full h-auto object-cover"
+                />
               </div>
 
-              <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 ">
-                <img src="today-deal-image/today-deal-banner-03.svg" class="w-full h-auto object-cover">
+              <div
+                class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8"
+              >
+                <img
+                  src="today-deal-image/today-deal-banner-03.svg"
+                  class="w-full h-auto object-cover"
+                />
               </div>
 
-              <div class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 ">
-                <img src="today-deal-image/today-deal-banner-04.svg" class="w-full h-auto object-cover">
+              <div
+                class="w-[600px] shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden border-t-8"
+              >
+                <img
+                  src="today-deal-image/today-deal-banner-04.svg"
+                  class="w-full h-auto object-cover"
+                />
               </div>
-
             </div>
-
           </div>
         </div>
-
-  </div>
-</div>
-</section>
-<!-- ================================================================================= -->
+      </section>
+      <!-- ================================================================================= -->
 
       <section class="h-auto bg-[#ECE0DC] px-4 py-4" classname="category">
         <!--Jay & Em-->
@@ -656,88 +711,198 @@
           </div>
         </div>
       </section>
-
-
     </main>
-
     <footer class="h-auto bg-[#68483d] font-['Cormorant_Garamond']">
-  <div class="px-8 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-      
-      <div class="md:col-span-2">
-        <p class="text-5xl text-white font-['Playfair']">Read<span class="text-[#ECE0DC]">ly</span></p>
+      <div class="px-8 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <div class="md:col-span-2">
+            <p class="text-5xl text-white font-['Playfair']">
+              Read<span class="text-[#ECE0DC]">ly</span>
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-3">
+            <h3
+              class="text-white text-2xl font-bold font-['Playfair'] border-b border-white pb-2"
+            >
+              Follow us
+            </h3>
+            <ul class="grid grid-cols-2 gap-2">
+              <li>
+                <a
+                  href="#"
+                  target="_blank"
+                  aria-label="Follow Emmi"
+                  class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  <span class="text-md font-bold">Emmi</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  target="_blank"
+                  aria-label="Follow Chong"
+                  class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  <span class="text-md font-bold">Chong</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  target="_blank"
+                  aria-label="Follow Ploy"
+                  class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  <span class="text-md font-bold">Ploy</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  target="_blank"
+                  aria-label="Follow Jay"
+                  class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  <span class="text-md font-bold">Jay</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  target="_blank"
+                  aria-label="Follow Nike"
+                  class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  <span class="text-md font-bold">Nike</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  target="_blank"
+                  aria-label="Follow Tar"
+                  class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  <span class="text-md font-bold">Tar</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-col gap-3">
+            <h3
+              class="text-white text-2xl font-bold border-b border-white pb-2 font-['Playfair']"
+            >
+              Getting started
+            </h3>
+            <ul class="flex flex-col gap-1.5">
+              <li>
+                <a href="#" class="text-gray-300 text-md hover:text-white"
+                  >How to use the coupon</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-300 text-md hover:text-white"
+                  >Frequently asked questions</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-300 text-md hover:text-white"
+                  >Send a request</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-col gap-3">
+            <h3
+              class="text-white text-2xl font-bold border-b border-white pb-2 font-['Playfair']"
+            >
+              About
+            </h3>
+            <ul class="flex flex-col gap-1.5">
+              <li>
+                <a href="#" class="text-gray-300 text-md hover:text-white"
+                  >About us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-300 text-md hover:text-white"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="flex flex-col gap-3">
-        <h3 class="text-white text-2xl font-bold font-['Playfair'] border-b border-white pb-2">
-          Follow us
-        </h3>
-        <ul class="grid grid-cols-2 gap-2">
-          <li>
-            <a href="#" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              <span class="text-md font-bold">Emmi</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              <span class="text-md font-bold">Chong</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              <span class="text-md font-bold">Ploy</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              <span class="text-md font-bold">Jay</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              <span class="text-md font-bold">Nike</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              <span class="text-md font-bold">Tar</span>
-            </a>
-          </li>
-        </ul>
+      <div class="border-white border-t px-8 py-4 border-solid">
+        <p class="text-white text-md font-['Cormorant_Garamond']">
+          ©2026 Tokyo < div>< / div>
+        </p>
       </div>
-
-      <div class="flex flex-col gap-3">
-        <h3 class="text-white text-2xl font-bold border-b border-white pb-2 font-['Playfair']">
-          Getting started
-        </h3>
-        <ul class="flex flex-col gap-1.5">
-          <li><a href="#" class="text-gray-300 text-md hover:text-white">How to use the coupon</a></li>
-          <li><a href="#" class="text-gray-300 text-md hover:text-white">Frequently asked questions</a></li>
-          <li><a href="#" class="text-gray-300 text-md hover:text-white">Send a request</a></li>
-        </ul>
-      </div>
-
-      <div class="flex flex-col gap-3">
-        <h3 class="text-white text-2xl font-bold border-b border-white pb-2">
-          About
-        </h3>
-        <ul class="flex flex-col gap-1.5">
-          <li><a href="#" class="text-gray-300 text-md hover:text-white">About us</a></li>
-          <li><a href="#" class="text-gray-300 text-md hover:text-white">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="border-white border-t px-8 py-4 border-solid">
-    <p class="text-white text-md font-['Cormorant_Garamond']">©2026 Tokyo < div>< / div></p>
-  </div>
-</footer>
+    </footer>
   </body>
 </html>
