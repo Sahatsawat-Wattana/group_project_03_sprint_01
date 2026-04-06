@@ -6,9 +6,6 @@
     <title>Readly</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libre+Caslon+Display&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
-
         .rating-star {
         display: flex;
         align-items: center;
@@ -20,24 +17,127 @@
         .no-scrollbar::-webkit-scrollbar {
         display: none;} 
   
+      @import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libre+Caslon+Display&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
     </style>
   </head>
   <body>
-    <!--font 1 Playfair--> <!--logo-->
-    <!--font 2 Cormorant_Garamond--> <!--content-->
-    <header class="h-[72px] bg-[#ECE0DC]"> 
-        <nav class="flex">
-            <!--Tar-->
-            
-        </nav>
+    <!--font 1 Playfair-->
+    <!--logo-->
+    <!--font 2 Cormorant_Garamond-->
+    <!--content-->
+    <header class="h-[72px] bg-[#ECE0DC]">
+      <nav class="flex h-full items-center justify-between px-8">
+        <div>
+          <p class="font-['Playfair'] text-4xl font-medium">
+            Read<span class="text-[#9D6B58]">ly</span>
+          </p>
+        </div>
+
+        <div class="flex items-center w-full max-w-xl mx-8">
+          <div class="relative flex w-full items-center">
+            <div class="relative group">
+              <select
+                class="h-[46px] bg-[#f8f5f4] border border-gray-300 border-r-0 rounded-l-lg pl-4 pr-10 text-sm text-gray-700 outline-none appearance-none cursor-pointer hover:bg-white transition-colors focus:ring-1 focus:ring-[#9D6B58]"
+              >
+                <option>All Categories</option>
+                <option>Romance</option>
+                <option>History</option>
+                <option>Self-Help</option>
+                <option>Children</option>
+                <option>Science fiction & Fantasy</option>
+              </select>
+              <div
+                class="absolute inset-y-0 right-3 flex items-center pointer-events-none"
+              >
+                <svg
+                  class="w-4 h-4 text-[#9D6B58]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+
+            <div class="relative w-full h-[46px]">
+              <div
+                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+              >
+                <svg
+                  class="w-4 h-4 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                  />
+                </svg>
+              </div>
+              <input
+                type="search"
+                class="block w-full h-full pl-10 pr-24 text-sm text-gray-900 border border-gray-300 rounded-r-lg bg-gray-50 focus:ring-[#9D6B58] focus:border-[#9D6B58] outline-none transition-all"
+                placeholder="Search your favorite book..."
+                required
+              />
+              <button
+                type="submit"
+                class="absolute right-1.5 top-1/2 -translate-y-1/2 bg-[#9D6B58] hover:bg-[#68483d] text-white font-bold rounded-md text-sm px-4 py-1.5 transition-colors"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6">
+          <a
+            href="#"
+            class="flex items-center justify-center hover:opacity-80 transition-opacity"
+          >
+            <img
+              src="./tar-image/heart.png"
+              alt="wishlist"
+              class="h-6 w-6 object-contain"
+            />
+          </a>
+          <a
+            href="#"
+            class="flex items-center justify-center hover:opacity-80 transition-opacity"
+          >
+            <img
+              src="./tar-image/shopping-cart.png"
+              alt="shopping cart"
+              class="h-6 w-6 object-contain"
+            />
+          </a>
+
+          <a
+            href="#"
+            class="flex items-center justify-center hover:opacity-80 transition-opacity"
+          >
+            <img
+              src="./tar-image/login.png"
+              alt="login"
+              class="h-7 w-7 object-contain"
+            />
+          </a>
+        </div>
+      </nav>
     </header>
-
-    <hr class="border-[#68483d] border-1">
+    <hr class="border-[#68483d] border-1" />
     <main>
-
-        <section class="h-[500px] pl-[100px] py-[40px] bg-[#ECE0DC] font-['Cormorant_Garamond']  flex flex-row " classname="hero-banner">
-
-            <!--Ploy-->
+      <section class="h-[500px] pl-[100px] py-[40px] bg-[#ECE0DC] font-['Cormorant_Garamond']  flex flex-row " classname="hero-banner">
             <div class="w-[240px] mr-[48px] [text-wrap:pretty]">
                   <h1 class="font-extrabold text-6xl">Trending <br> Books</h1>
                   <p class="mt-2 text-2xl font-semibold">Let's discover your new favorite books !</p>
@@ -263,25 +363,203 @@
                    alt="filter"/>
                 
             </button>
+      </section>
 
-        </section>
+      <section class="h-[500px] bg-white" classname="today-deal">
+        <!--Chong-->
+      </section>
 
-        <section class="h-[500px] bg-white" classname="today-deal">
-            <!--Chong-->
-
-        </section>
-
-        <section class="h-[500px] bg-[#ECE0DC]" classname="category">
-            <!--Jay & Em-->
-
-        </section>
-
+      <section class="h-[500px] bg-[#ECE0DC]" classname="category">
+        <!--Jay & Em-->
+        <div class="flex container mx-auto flex-col mx-9">
+          <!--Popular Category-->
+          <div class="flex justify-between mb-7 items-center">
+            <h1 class="text-4xl font-bold font-[Cormorant_Garamond]">
+              Popular Category
+            </h1>
+            <a
+              href=""
+              class="text-xl font-[Cormorant_Garamond] font-bold hover:text-[#9D6B5B]"
+              >See more ></a
+            >
+          </div>
+          <!--Category-->
+          <div class="flex gap-6 mb-6 font-bold text-sm">
+            <button
+              class="py-1 px-4 text-xl font-[Cormorant_Garamond] bg-[#9D6B5B] rounded-full text-white hover:text-[#9D6B5B] hover:bg-white"
+            >
+              Romance
+            </button>
+            <buttons
+              class="py-1 px-4 text-xl font-[Cormorant_Garamond] bg-[#9D6B5B] rounded-4xl text-white hover:text-[#9D6B5B] hover:bg-white"
+            >
+              Science Fiction & Fantasy
+            </buttons>
+            <button
+              class="py-1 px-4 text-xl font-[Cormorant_Garamond] bg-[#9D6B5B] rounded-4xl text-white hover:text-[#9D6B5B] hover:bg-white"
+            >
+              Self-help
+            </button>
+            <button
+              class="py-1 px-4 text-xl font-[Cormorant_Garamond] bg-[#9D6B5B] rounded-4xl text-white hover:text-[#9D6B5B] hover:bg-white"
+            >
+              History
+            </button>
+            <button
+              class="py-1 px-4 text-xl font-[Cormorant_Garamond] bg-[#9D6B5B] rounded-4xl text-white hover:text-[#9D6B5B] hover:bg-white"
+            >
+              Children's Books
+            </button>
+          </div>
+          <!--Card-->
+          <div class="relative">
+            <div
+              class="flex grid grid-cols-6 gap-7 h-5/6 px-6 py-6 rounded-2xl bg-[#f9f1e8]"
+            >
+              <!--Card 1-->
+              <div>
+                <img
+                  src="/em-jay-content/romance/The Night We Met.jpg"
+                  alt="The Night We Met"
+                  class="aspect-[3/4] bg-gray-200 overflow-hidden rounded-xl mb-4"
+                />
+                <p class="text-lg font-[Cormorant_Garamond] font-bold">
+                  The Night We Met
+                </p>
+                <p
+                  class="text-sm leading-tight font-[Cormorant_Garamond] font-bold text-gray-600"
+                >
+                  (Visited 203 times)
+                </p>
+              </div>
+              <!--Card 2-->
+              <div>
+                <img
+                  src="/em-jay-content/romance/IN THE GREAT QUIET.jpg"
+                  alt="The Night We Met"
+                  class="aspect-[3/4] bg-gray-200 overflow-hidden rounded-xl mb-4"
+                />
+                <p class="text-lg font-[Cormorant_Garamond] font-bold">
+                  In the Great Quiet: A Novel
+                </p>
+                <p
+                  class="text-sm leading-tight font-[Cormorant_Garamond] font-bold text-gray-600"
+                >
+                  (Visited 2,287 times)
+                </p>
+              </div>
+              <!--Card 3-->
+              <div>
+                <img
+                  src="/em-jay-content/romance/HUNT THE VILLAIN.jpg"
+                  alt="The Night We Met"
+                  class="aspect-[3/4] bg-gray-200 overflow-hidden rounded-xl mb-4"
+                />
+                <p
+                  class="line-clamp-2 text-lg font-[Cormorant_Garamond] font-bold"
+                >
+                  Hunt the Villain: A Dark MM College Mafia Romance
+                </p>
+                <p
+                  class="text-sm leading-tight font-[Cormorant_Garamond] font-bold text-gray-600"
+                >
+                  (Visited 324 times)
+                </p>
+              </div>
+              <!--Card 4-->
+              <div>
+                <img
+                  src="/em-jay-content/romance/in her own.jpg"
+                  alt="The Night We Met"
+                  class="aspect-[3/4] bg-gray-200 overflow-hidden rounded-xl mb-4"
+                />
+                <p
+                  class="text-lg font-[Cormorant_Garamond] font-bold line-clamp-2"
+                >
+                  In Her Own League: A Windy City Series Spinoff
+                </p>
+                <p
+                  class="text-sm leading-tight font-[Cormorant_Garamond] font-bold text-gray-600"
+                >
+                  (Visited 22,160 times)
+                </p>
+              </div>
+              <!--Card 5-->
+              <div>
+                <img
+                  src="/em-jay-content/romance/mistakes were made.jpg"
+                  alt="The Night We Met"
+                  class="aspect-[3/4] bg-gray-200 overflow-hidden rounded-xl mb-4"
+                />
+                <p class="text-lg font-[Cormorant_Garamond] font-bold">
+                  Mistakes Were Made: Story Lake, Book 2
+                </p>
+                <p
+                  class="text-sm leading-tight font-[Cormorant_Garamond] font-bold text-gray-600"
+                >
+                  (Visited 3,465 times)
+                </p>
+              </div>
+              <!--Card 6-->
+              <div>
+                <img
+                  src="/em-jay-content/romance/A Court of Thorns.jpg"
+                  alt="The Night We Met"
+                  class="aspect-[3/4] bg-gray-200 overflow-hidden rounded-xl mb-4"
+                />
+                <p class="text-lg font-[Cormorant_Garamond] font-bold">
+                  A Court of Thorns and Roses 6
+                </p>
+                <p
+                  class="text-sm leading-tight font-[Cormorant_Garamond] font-bold text-gray-600"
+                >
+                  (Visited 3,465 times)
+                </p>
+              </div>
+            </div>
+            <button
+              class="absolute -left-5 top-1/3 -translate-y-1/2 w-9 h-9 bg-white border border-gray-200 rounded-full shadow flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 text-gray-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                ></path>
+              </svg>
+            </button>
+            <button
+              class="absolute -right-5 top-1/3 -translate-y-1/2 w-9 h-9 bg-white border border-gray-200 rounded-full shadow flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 text-gray-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="h-[] bg-[#68483d]">
-        <!--Nike-->
-
+      <!--Nike-->
     </footer>
-
   </body>
 </html>
